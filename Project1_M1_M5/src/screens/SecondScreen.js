@@ -69,4 +69,51 @@ const SecondScreen = () => {
     )
 };
 
-export default SecondScreen;
+
+const ChallengeScreen = () => {
+    return (
+        <View style={{
+            flex: 1, justifyContent: 'center', alignItems: 'center'
+        }}>
+            <View>
+                <Text style={{color: 'blue', textDecorationLine: 'underline'}}>
+                    iOS
+                </Text>
+            </View>
+            <View>
+                <Text>
+                    iOS (formerly iPhone OS) is a mobile operating
+                    system created and developed by Apple Inc.
+                    exclusively for its hardware. It is the operating
+                    system that powers many of the company's mobile
+                    devices, including the iPhone and iPod Touch.
+
+                </Text>
+            </View>
+            <View>
+                <Text>
+                    VS.
+                </Text>
+            </View>
+            <View>
+                <Text style={{color: 'green', textDecorationLine: 'underline'}}>
+                    Android
+                </Text>
+            </View>
+            <View>
+                <Text>
+                    Android is a mobile operating system based on a
+                    modified version of the Linux kernel and other open
+                    source software, designed primarily for
+                    touchscreen mobile devices such as smartphones and
+                    tablets. Android is developed by a consortium of
+                    developers known as the <Text>Open Handset Alliance</Text> and
+                    commercially sponsored by Google.
+
+                </Text>
+            </View>
+        </View>
+    )
+};
+
+export default ChallengeScreen;
