@@ -72,7 +72,7 @@ const FourthScreen = () => {
                 }}
                 placeholder="Phone Number"
                 multiline={true}
-                keyboardType="numeric"
+                keyboardType="phone-pad"
             />
         </View>
     )
