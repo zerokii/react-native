@@ -36,43 +36,19 @@ const FourthScreen = () => {
                 </Text>
             </ImageBackground>
 
-            <Text
-                style={{
-                    marginTop: 12,
-                    marginBottom: 12
-                }}>
-                Description
-            </Text>
-
-            <TextInput
-                style={{
-                    padding: 10,
-                    borderWidth: 1,
-                    height: 140,
-                    fontSize: 16
-                }}
+            <InputComponent
+                title="Description"
+                height={140}
                 placeholder="About the place"
                 multiline={true}
                 keyboardType="default"
             />
 
-            <Text
-                style={{
-                    marginTop: 12,
-                    marginBottom: 12
-                }}>
-                Phone Number
-            </Text>
 
-            <TextInput
-                style={{
-                    padding: 10,
-                    borderWidth: 1,
-                    height: 40,
-                    fontSize: 16
-                }}
+            <InputComponent
+                title="Phone Number"
+                height={40}
                 placeholder="Phone Number"
-                multiline={true}
                 keyboardType="phone-pad"
             />
 
