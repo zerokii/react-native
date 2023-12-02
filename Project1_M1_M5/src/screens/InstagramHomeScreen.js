@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { Icon } from "react-native-elements";
+import { Feed } from "../components/InstagramComponent";
 
 const InstagramHomeScreen = () => {
     return (
@@ -33,7 +34,7 @@ const InstagramHomeScreen = () => {
                             type="font-awesome"
                             size={26}
                         />
-                        
+
                     </View>
 
                     <View style={{ margin: 8 }}>
@@ -43,7 +44,7 @@ const InstagramHomeScreen = () => {
                             type="font-awesome"
                             size={26}
                         />
-                        
+
                     </View>
 
                     <View style={{ margin: 8 }}>
@@ -53,12 +54,23 @@ const InstagramHomeScreen = () => {
                             type="ionicon"
                             size={26}
                         />
-                        
+
                     </View>
 
                 </View>
 
             </View >
+
+            <View style={{ flex: 1 }}>
+                {/* custom font and icons */}
+                <ScrollView>
+                    <Feed
+                    profile={require("../../assets/images/profilePicture1.png")}
+                    username="catheryne"
+                    post={{uri:"https://wallpaperaccess.com/full/201215.jpg"}}
+                    />
+                </ScrollView>
+            </View>
 
         </View >
     )
