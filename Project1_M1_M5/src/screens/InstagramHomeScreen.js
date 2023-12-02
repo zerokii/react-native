@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView } from "react-native";
 import { Icon } from "react-native-elements";
-import { Feed } from "../components/InstagramComponent";
+import { Feed, Story } from "../components/InstagramComponent";
 
 const InstagramHomeScreen = () => {
     return (
@@ -65,6 +65,35 @@ const InstagramHomeScreen = () => {
                 {/* custom font and icons */}
                 <ScrollView>
 
+                    <View style={{ flexDirection: "row", margin: 8 }}>
+                        <ScrollView horizontal>
+                            <Story
+                                profile={require("../../assets/images/profilePicture1.png")}
+                                username="catheryne"
+                            />
+
+                            <Story
+                                profile={require("../../assets/images/profilePicture2.png")}
+                                username="ben"
+                            />
+
+                            <Story
+                                profile={require("../../assets/images/profilePicture3.png")}
+                                username="bob"
+                            />
+
+                            <Story
+                                profile={require("../../assets/images/profilePicture4.png")}
+                                username="dennis"
+                            />
+
+                            <Story
+                                profile={require("../../assets/images/profilePicture5.png")}
+                                username="daniel"
+                            />
+                        </ScrollView>
+                    </View>
+
                     <Feed
                         profile={require("../../assets/images/profilePicture1.png")}
                         username="catheryne"
@@ -96,7 +125,7 @@ const InstagramHomeScreen = () => {
                     />
 
                 </ScrollView>
-            </View>
+            </View >
 
         </View >
     )
