@@ -11,7 +11,8 @@ export const InputComponent = (props) => {
             <Text
                 style={{
                     marginTop: 12,
-                    marginBottom: 12
+                    marginBottom: 12,
+                    color: "black"
                 }}>
                 {title}
             </Text>
