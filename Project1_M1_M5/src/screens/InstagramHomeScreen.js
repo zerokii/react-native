@@ -64,11 +64,37 @@ const InstagramHomeScreen = () => {
             <View style={{ flex: 1 }}>
                 {/* custom font and icons */}
                 <ScrollView>
+
                     <Feed
-                    profile={require("../../assets/images/profilePicture1.png")}
-                    username="catheryne"
-                    post={{uri:"https://wallpaperaccess.com/full/201215.jpg"}}
+                        profile={require("../../assets/images/profilePicture1.png")}
+                        username="catheryne"
+                        post={{ uri: "https://wallpaperaccess.com/full/201215.jpg" }}
                     />
+
+                    <Feed
+                        profile={require("../../assets/images/profilePicture2.png")}
+                        username="ben"
+                        post={{ uri: "https://images4.alphacoders.com/292/292026.jpg" }}
+                    />
+
+                    <Feed
+                        profile={require("../../assets/images/profilePicture3.png")}
+                        username="bob"
+                        post={{ uri: "https://wallpaperaccess.com/full/496881.jpg" }}
+                    />
+
+                    <Feed
+                        profile={require("../../assets/images/profilePicture4.png")}
+                        username="dennis"
+                        post={{ uri: "https://images5.alphacoders.com/316/316297.jpg" }}
+                    />
+
+                    <Feed
+                        profile={require("../../assets/images/profilePicture5.png")}
+                        username="daniel"
+                        post={{ uri: "https://wallpaperaccess.com/full/1403923.jpg" }}
+                    />
+
                 </ScrollView>
             </View>
 
