@@ -13,6 +13,22 @@ const GuessTheCountryScreen = () => {
         setIndex(pickRandomIndex);
     }
 
+    const checkAnswer = () => {
+
+        if (answer.toLowerCase() === countryList[index]) {
+            setResult("Correct!");
+        }
+        else {
+            setResult("Wrong!");
+        }
+
+        setTimeout(() => {
+            setResult('');
+            randomIndex();
+        }, 1500);
+
+    };
+
     useEffect(() => {
         randomIndex();
     }, []);
@@ -81,6 +97,7 @@ const GuessTheCountryScreen = () => {
                         marginTop: 8,
                         backgroundColor: "skyblue"
                     }}
+                    onPress={() => checkAnswer()}
                 >
 
                     <Text style={{ fontSize: 18 }}>
@@ -91,7 +108,7 @@ const GuessTheCountryScreen = () => {
 
             </View >
 
-            <Text>{answer}</Text>
+            <Text>{result}</Text>
 
         </View >
     )
