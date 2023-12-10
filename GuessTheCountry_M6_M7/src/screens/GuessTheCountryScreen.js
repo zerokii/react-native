@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { countryList, objectNameList, objectImageList } from "../../data/Data";
 
 const GuessTheCountryScreen = () => {
+
+    const [answer, setAnswer] = useState('');
+    const [index, setIndex] = useState(0);
+    const [result, setResult] = useState('');
+
+    const randomIndex = () => {
+        const pickRandomIndex = Math.floor(Math.random() * countryList.length);
+        setIndex(pickRandomIndex);
+    }
+
+    useEffect(() => {
+        randomIndex();
+    }, []);
+
     return (
         <View style={{
             flex: 1,
@@ -24,7 +39,7 @@ const GuessTheCountryScreen = () => {
                     borderRadius: 10
                 }}
                 source={{
-                    uri: "https://wallpaperaccess.com/full/180136.jpg"
+                    uri: objectImageList[index]
                 }}
             />
 
@@ -35,7 +50,7 @@ const GuessTheCountryScreen = () => {
                 borderWidth: 1
             }}>
                 <Text style={{ fontSize: 18 }}>
-                    Big Ben
+                    {objectNameList[index]}
                 </Text>
             </View>
 
@@ -50,6 +65,8 @@ const GuessTheCountryScreen = () => {
                         width: "50%",
                     }}
                     placeholder="Write your answer"
+                    keyboardType='default'
+                    onChangeText={(text) => setAnswer(text)}
                 />
 
                 <TouchableOpacity
@@ -73,6 +90,8 @@ const GuessTheCountryScreen = () => {
                 </TouchableOpacity>
 
             </View >
+
+            <Text>{answer}</Text>
 
         </View >
     )
