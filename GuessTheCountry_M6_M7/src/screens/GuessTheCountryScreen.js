@@ -24,6 +24,7 @@ const GuessTheCountryScreen = (props) => {
         }
         else {
             setResult("Wrong!");
+            setLife(life - 1);
         }
 
         setTimeout(() => {
@@ -38,6 +39,7 @@ const GuessTheCountryScreen = (props) => {
         const homePage = navigation.addListener("focus", () => {
             randomIndex();
             setScore(0);
+            setLife(3);
         })
         return homePage;
     }, []);
@@ -47,6 +49,12 @@ const GuessTheCountryScreen = (props) => {
             navigation.navigate("Win");
         }
     }, [score]);
+
+    useEffect(() => {
+        if (life === 0) {
+            navigation.navigate("GameOver");
+        }
+    }, [life]);
 
 
     return (
@@ -143,7 +151,7 @@ const GuessTheCountryScreen = (props) => {
                             alignItems: "center",
                             backgroundColor: "mistyrose",
                             borderRadius: 20,
-                            flex:1,
+                            flex: 1,
                             marginRight: 8,
                         }}>
                         <Text>Score : {score}</Text>
@@ -156,7 +164,7 @@ const GuessTheCountryScreen = (props) => {
                             alignItems: "center",
                             backgroundColor: "mistyrose",
                             borderRadius: 20,
-                            flex:1,
+                            flex: 1,
                         }}>
                         <Text>Life : {life}</Text>
                     </View>
