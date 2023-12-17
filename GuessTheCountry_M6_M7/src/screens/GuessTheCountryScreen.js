@@ -9,6 +9,7 @@ const GuessTheCountryScreen = (props) => {
     const [index, setIndex] = useState(0);
     const [result, setResult] = useState('');
     const [score, setScore] = useState(0);
+    const [life, setLife] = useState(3);
 
     const randomIndex = () => {
         const pickRandomIndex = Math.floor(Math.random() * countryList.length);
@@ -131,18 +132,35 @@ const GuessTheCountryScreen = (props) => {
                     style={{
                         justifyContent: "center",
                         alignItems: "center",
-                        padding: 16
+                        padding: 16,
+                        flexDirection: "row",
                     }}>
+
                     <View
                         style={{
                             borderWidth: 1,
                             padding: 8,
                             alignItems: "center",
                             backgroundColor: "mistyrose",
-                            borderRadius: 20
+                            borderRadius: 20,
+                            flex:1,
+                            marginRight: 8,
                         }}>
                         <Text>Score : {score}</Text>
                     </View>
+
+                    <View
+                        style={{
+                            borderWidth: 1,
+                            padding: 8,
+                            alignItems: "center",
+                            backgroundColor: "mistyrose",
+                            borderRadius: 20,
+                            flex:1,
+                        }}>
+                        <Text>Life : {life}</Text>
+                    </View>
+
                 </View>
 
 

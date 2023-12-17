@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 const MainNavigator = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="GameOver">
+            <Stack.Navigator initialRouteName="Home">
 
                 <Stack.Screen
                     name="Home"
