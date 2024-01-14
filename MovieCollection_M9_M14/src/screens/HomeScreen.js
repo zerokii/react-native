@@ -15,8 +15,9 @@ const HomeScreen = () => {
                             <Image
                                 style={styles.movieImage}
                                 source={{ uri: item.imageLink }}
-
                             />
+                            <Text style={styles.title}>{item.title}</Text>
+                            <Text>{item.year}</Text>
                         </View>
                     )
                 }}
@@ -38,7 +39,16 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     dataContainer: {
-        margin: 8
+        margin: 8,
+        borderColor: "#96ceb4",
+        borderWidth: 2,
+        borderRadius: 10,
+        padding: 16,
+        flexDirection: "row"
+    },
+    title: {
+        fontSize: 18,
+        fontWeight: "bold"
     }
 });
 
