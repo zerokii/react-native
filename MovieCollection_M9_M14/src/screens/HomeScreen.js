@@ -80,6 +80,15 @@ const HomeScreen = () => {
                 }}
                 ListHeaderComponent={
                     <View>
+
+                        <View style={styles.mainCategoryContainer}>
+                            <View style={styles.categoryContainer}>
+                                <Text style={styles.categoryText}>
+                                    Most Viewed
+                                </Text>
+                            </View>
+                        </View>
+
                         <FlatList
                             horizontal
                             data={mostViewed}
@@ -94,6 +103,15 @@ const HomeScreen = () => {
                                 )
                             }}
                         />
+
+                        <View style={styles.mainCategoryContainer}>
+                            <View style={styles.categoryContainer}>
+                                <Text style={styles.categoryText}>
+                                    Recommended
+                                </Text>
+                            </View>
+                        </View>
+
                     </View>
                 }
             />
@@ -133,6 +151,19 @@ const styles = StyleSheet.create({
     yearContainer: {
         marginTop: 8,
         marginBottom: 8
+    },
+    mainCategoryContainer: {
+        marginTop: 8,
+        marginLeft: 8,
+        marginRight: 8,
+        flexDirection: "row"
+        },
+        categoryContainer: {
+        flex: 1
+        },
+        categoryText: {
+        fontSize: 20,
+        fontWeight: "bold"
     }
 });
 
