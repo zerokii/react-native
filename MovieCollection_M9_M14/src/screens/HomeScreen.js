@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import { movieData } from '../../data/MovieData';
+import { ShowMovie } from '../components/MovieComponent';
 
 const HomeScreen = () => {
     return (
@@ -12,15 +13,45 @@ const HomeScreen = () => {
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.dataContainer}>
+
                             <Image
                                 style={styles.movieImage}
                                 source={{ uri: item.imageLink }}
                             />
-                            <Text style={styles.title}>{item.title}</Text>
-                            <Text>{item.year}</Text>
+
+                            <View style={styles.movieDescriptionContainer}>
+
+                                <Text style={styles.title}>{item.title}</Text>
+
+                                <View style={styles.yearContainer}>
+                                    <Text>{item.year}</Text>
+                                </View>
+
+                                <Text>{item.rating}</Text>
+
+                            </View>
+
                         </View>
                     )
                 }}
+                ListHeaderComponent={
+                    <View>
+                        <FlatList
+                            horizontal
+                            data={movieData}
+                            keyExtractor={(item) => item.id}
+                            renderItem={({ item }) => {
+                                return (
+                                    <ShowMovie
+                                        image={{ uri: item.imageLink }}
+                                        title={item.title}
+                                        viewers={item.viewers}
+                                    />
+                                )
+                            }}
+                        />
+                    </View>
+                }
             />
         </View>
     )
@@ -49,6 +80,15 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         fontWeight: "bold"
+    },
+    movieDescriptionContainer: {
+        flex: 1,
+        justifyContent: "center",
+        marginLeft: 8,
+    },
+    yearContainer: {
+        marginTop: 8,
+        marginBottom: 8
     }
 });
 
