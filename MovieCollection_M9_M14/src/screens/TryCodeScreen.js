@@ -18,9 +18,12 @@ const TryCodeScreen = () => {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => {
                     return (
-                        <View style={
-                            styles.containerAnItem
-                        }>
+                        <View style={[
+                            styles.containerAnItem,
+                            {
+                                backgroundColor: "lavender"
+                            }
+                        ]}>
                             <Image
                                 source={{ uri: item.imageLink }}
                                 style={{
@@ -45,7 +48,6 @@ const TryCodeScreen = () => {
 const styles = StyleSheet.create({
     containerAnItem: {
         margin: 8,
-        backgroundColor: "lavender",
         borderWidth: 1
     }
 })
