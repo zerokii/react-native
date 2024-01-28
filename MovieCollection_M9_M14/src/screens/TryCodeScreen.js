@@ -21,7 +21,9 @@ const TryCodeScreen = () => {
                         <View style={[
                             styles.containerAnItem,
                             {
-                                backgroundColor: "lavender"
+                                backgroundColor:
+                                    item.gender.toLowerCase() === "male" ?
+                                        "moccasin" : "lavender"
                             }
                         ]}>
                             <Image
