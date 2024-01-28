@@ -73,6 +73,11 @@ const HomeScreen = () => {
 
                                 <Text>{item.rating}</Text>
 
+                                <Image
+                                style={styles.movieRating}
+                                source = {require("../../assets/images/five-stars.png")}
+                                />
+
                             </View>
 
                         </View>
@@ -164,7 +169,12 @@ const styles = StyleSheet.create({
         categoryText: {
         fontSize: 20,
         fontWeight: "bold"
+    },
+    movieRating:{
+        width: 100,
+        height: 20
     }
 });
+
 
 export default HomeScreen;
