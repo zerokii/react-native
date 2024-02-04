@@ -17,10 +17,16 @@ const DetailMovieScreen = (props) => {
         <View style={styles.mainContainer}>
             <View style={styles.movieContainer}>
                 <View style={styles.middle}>
+
                     <Image
                         style={styles.image}
                         source={{ uri: movie.imageLink }}
                     />
+
+                    <View style={styles.titleContainer}>
+                        <Text style={styles.title}>{movie.title}</Text>
+                    </View>
+
                 </View>
             </View>
         </View>
@@ -44,6 +50,20 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 3,
         borderColor: "#ffbe7bff"
+    },
+    titleContainer: {
+        marginTop: 8,
+        marginBottom: 8,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: "bold",
+        padding: 8,
+        backgroundColor: "salmon",
+        borderRadius: 10,
+        color: "white",
     }
 });
 
