@@ -50,6 +50,17 @@ const HomeScreen = (props) => {
         const sortedMostViewed = [...movieData].sort(compareViewers);
         setMostViewed(sortedMostViewed);
 
+        const threeRecommended = [];
+        const threeMostViewed = [];
+        // sort data code here
+        for (let i = 0; i < 3; i++) {
+            threeRecommended.push(sortedRecommended[i]);
+            threeMostViewed.push(sortedMostViewed[i]);
+        };
+        setRecommended(threeRecommended);
+        setMostViewed(threeMostViewed);
+
+
     }, []);
 
     return (
@@ -107,11 +118,11 @@ const HomeScreen = (props) => {
                                 }
 
                                 <ButtonComponent
-                                    onPress = {()=>navigation.navigate("DetailMovie", {item})}
-                                    // onPress={() => navigation.navigate("DetailMovie", {
-                                    //     title: item.title,
-                                    //     year: item.year
-                                    // })}
+                                    onPress={() => navigation.navigate("DetailMovie", { item })}
+                                // onPress={() => navigation.navigate("DetailMovie", {
+                                //     title: item.title,
+                                //     year: item.year
+                                // })}
                                 />
 
                             </View>
