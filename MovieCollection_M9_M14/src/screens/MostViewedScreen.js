@@ -16,6 +16,8 @@ const MostViewedScreen = (props) => {
                 contentContainerStyle={styles.mainDataContainer}
                 data={sortedMostViewed}
                 keyExtractor={(item) => item.id}
+                numColumns={2}
+                key={2}
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.movieContainer}>
