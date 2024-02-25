@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
 import { movieData } from '../../data/MovieData';
 import { ShowMovie } from '../components/MovieComponent';
 import { Button } from 'react-native-elements';
@@ -53,7 +53,7 @@ const HomeScreen = (props) => {
         const threeRecommended = [];
         const threeMostViewed = [];
         // sort data code here
-        for (let i = 0; i < 0; i++) {
+        for (let i = 0; i < 3; i++) {
             threeRecommended.push(sortedRecommended[i]);
             threeMostViewed.push(sortedMostViewed[i]);
         };
@@ -143,11 +143,20 @@ const HomeScreen = (props) => {
                     <View>
 
                         <View style={styles.mainCategoryContainer}>
+
                             <View style={styles.categoryContainer}>
+
                                 <Text style={styles.categoryText}>
                                     Most Viewed
                                 </Text>
                             </View>
+
+                            <View style={styles.seeAllContainer}>
+                                <TouchableOpacity>
+                                    <Text style={styles.seeAllText}>See All</Text>
+                                </TouchableOpacity>
+                            </View>
+
                         </View>
 
                         <FlatList
@@ -239,6 +248,15 @@ const styles = StyleSheet.create({
     movieRating: {
         width: 100,
         height: 20
+    },
+    seeAllContainer: {
+        flex: 1,
+        alignItems: "flex-end",
+        justifyContent: "center"
+    },
+    seeAllText: {
+        color: "#009688",
+        textDecorationLine: "underline"
     }
 });
 
