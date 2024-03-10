@@ -12,7 +12,8 @@ const HomeScreen = (props) => {
     const [recommended, setRecommended] = useState([]);
     const [mostViewed, setMostViewed] = useState([]);
     const [allMostViewed, setAllMostViewed] = useState([]);
-    
+    const [allRecommended, setAllRecommended] = useState([]);
+
     const compareRating = (movieA, movieB) => {
 
         const ratingA = movieA.rating;
@@ -61,6 +62,7 @@ const HomeScreen = (props) => {
         setRecommended(threeRecommended);
         setMostViewed(threeMostViewed);
         setAllMostViewed(sortedMostViewed);
+        setAllRecommended(sortedRecommended);
 
     }, []);
 
@@ -154,8 +156,8 @@ const HomeScreen = (props) => {
 
                             <View style={styles.seeAllContainer}>
                                 <TouchableOpacity
-                                onPress={
-                                    () => navigation.navigate("MostViewed", {allMostViewed})
+                                    onPress={
+                                        () => navigation.navigate("MostViewed", { allMostViewed })
                                     }
                                 >
                                     <Text style={styles.seeAllText}>See All</Text>
@@ -191,11 +193,23 @@ const HomeScreen = (props) => {
                         />
 
                         <View style={styles.mainCategoryContainer}>
+
                             <View style={styles.categoryContainer}>
                                 <Text style={styles.categoryText}>
                                     Recommended
                                 </Text>
                             </View>
+
+                            <View style={styles.seeAllContainer}>
+                                <TouchableOpacity
+                                    onPress={
+                                        () => navigation.navigate("Recommended", { allRecommended })
+                                    }
+                                >
+                                    <Text style={styles.seeAllText}>See All</Text>
+                                </TouchableOpacity>
+                            </View>
+
                         </View>
 
                     </View>
