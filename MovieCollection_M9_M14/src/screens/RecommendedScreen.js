@@ -2,7 +2,7 @@ import { View, Text, FlatList, StyleSheet } from 'react-native';
 import React from 'react';
 import { ShowMovie } from '../components/MovieComponent';
 
-const RecommendedScreen = ({ route }) => {
+const RecommendedScreen = ({ route, navigation }) => {
 
     const sortedRecommended = route.params.allRecommended;
 
@@ -21,13 +21,14 @@ const RecommendedScreen = ({ route }) => {
                             title={item.title}
                             isRecommended={true}
                             rating={item.rating}
+                            onPress={() => navigation.navigate("DetailMovie", { item })}
                         />
                     )
                 }}
             />
         </View>
     )
-    
+
 }
 
 const styles = StyleSheet.create({
