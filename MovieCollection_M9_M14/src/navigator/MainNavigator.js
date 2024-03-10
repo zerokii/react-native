@@ -32,6 +32,18 @@ const MainNavigator = () => {
                 <Stack.Screen
                     name="DetailMovie"
                     component={DetailMovieScreen}
+                    options={{
+                        title: "Details",
+                        headerStyle: {
+                            backgroundColor: "#65c3ba"
+                        },
+                        headerTitleStyle: {
+                            color: "white",
+                            fontSize: 24
+                        },
+                        headerTitleAlign: "left",
+                        headerLeft: null
+                    }}
                 />
 
                 <Stack.Screen
