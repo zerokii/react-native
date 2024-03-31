@@ -85,7 +85,12 @@ const HomeScreen = ({ navigation }) => {
                                 }
 
                                 <View style={styles.buttonContainer}>
-                                    <TouchableOpacity style={styles.insideButtonContainer}>
+                                    <TouchableOpacity
+                                        style={styles.insideButtonContainer}
+                                        onPress={
+                                            () => navigation.navigate("Detail", { item })
+                                        }
+                                    >
                                         <Text style={{ color: "white" }}>
                                             SEE DETAILS
                                         </Text>
