@@ -2,44 +2,86 @@ import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { songData } from "../../data/SongData";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
+
+    const [song, setSong] = useState([]);
+
+    const compareRating = (songA, songB) => {
+
+        const ratingA = songA.rating;
+        const ratingB = songB.rating;
+
+        if (ratingA > ratingB) {
+            return -1;
+        } else if (ratingA < ratingB) {
+            return 1;
+        } else {
+            return 0;
+        }
+
+    };
+
+    useEffect(() => {
+
+        const sortedSong = [...songData].sort(compareRating);
+        setSong(sortedSong);
+
+    }, []);
 
     return (
         <View style={{ padding: 8 }}>
 
-            <View style={styles.mainContainer}>
+            <FlatList
+                data={song}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => {
+                    return (
+                        <View style={styles.mainContainer}>
 
-                <Image
-                    style={styles.songImage}
-                    source={{ uri: "https://upload.wikimedia.org/wikipedia/en/5/57/Girls_like_You_cover.png" }}
-                />
+                            <Image
+                                style={styles.songImage}
+                                source={{ uri: item.imageLink }}
+                            />
 
-                <View style={styles.songContainer}>
+                            <View style={styles.songContainer}>
 
-                    <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-                        Title
-                    </Text>
+                                <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                                    {item.title}
+                                </Text>
 
-                    <View style={styles.singerContainer}>
-                        <Text>Singer</Text>
+                                <View style={styles.singerContainer}>
+                                    <Text>{item.singer}</Text>
+                                </View>
+
+                                <Image
+                                    style={styles.ratingImage}
+                                    source={require("../../assets/images/five-stars.png")}
+                                />
+
+                                <View style={styles.buttonContainer}>
+                                    <TouchableOpacity style={styles.insideButtonContainer}>
+                                        <Text style={{ color: "white" }}>
+                                            SEE DETAILS
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
+
+                            </View>
+
+                        </View>
+                    )
+                }}
+
+                ListEmptyComponent={
+                    <View style={{ alignItems: "center" }}>
+                        <Text>
+                            No items in this category.
+                        </Text>
                     </View>
+                }
+            />
 
-                    <Image
-                        style={styles.ratingImage}
-                        source={require("../../assets/images/five-stars.png")}
-                    />
 
-                    <View style={styles.buttonContainer}>
-                        <TouchableOpacity style={styles.insideButtonContainer}>
-                            <Text style={{ color: "white" }}>
-                                SEE DETAILS
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-
-                </View>
-
-            </View>
 
         </View>
     )
