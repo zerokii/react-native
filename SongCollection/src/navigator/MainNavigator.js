@@ -15,9 +15,8 @@ const MainNavigator = () => {
                     name="Home"
                     component={HomeScreen}
                     options={{
-                        title: "Movie Collection",
                         headerStyle: {
-                            backgroundColor: "#65c3ba"
+                            backgroundColor: "#CAB0C3"
                         },
                         headerTitleStyle: {
                             color: "white",
@@ -32,9 +31,8 @@ const MainNavigator = () => {
                     name="Detail"
                     component={DetailScreen}
                     options={{
-                        title: "Movie Collection",
                         headerStyle: {
-                            backgroundColor: "#65c3ba"
+                            backgroundColor: "#CAB0C3"
                         },
                         headerTitleStyle: {
                             color: "white",
